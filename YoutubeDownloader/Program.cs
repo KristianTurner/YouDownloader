@@ -19,7 +19,22 @@ namespace YoutubeDownloader
                 {
                     input = "UC6duv54jElkzAiQHCBfEjow";
                 }
-                var testFilm = new YoutubeData(@"https://www.youtube.com/watch?v=GLSPub4ydiM");
+                var channelInfo = new YoutubeChannel(input);
+                Console.WriteLine("Listing 50 newest videos:");
+                channelInfo.DisplayVideoNames();
+
+                Console.WriteLine("Download newest video?");
+                var readLine = Console.ReadLine();
+                if (readLine != null) input = readLine.ToLower();
+
+                if (input == "y")
+                {
+                    var downloadVideo = new YoutubeVideoData(channelInfo.NewestVideoId());
+                    downloadVideo.YouTubeToDisk();
+                } 
+
+                
+                //var testFilm = new YoutubeData(@"https://www.youtube.com/watch?v=GLSPub4ydiM");
             }
             catch (Exception)
             {
