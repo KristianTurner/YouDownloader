@@ -34,7 +34,7 @@ namespace YoutubeDownloader
                 } 
 
                 
-                //var testFilm = new YoutubeData(@"https://www.youtube.com/watch?v=GLSPub4ydiM");
+                //var testFilm = new YoutubeMovie(@"https://www.youtube.com/watch?v=GLSPub4ydiM");
             }
             catch (Exception)
             {

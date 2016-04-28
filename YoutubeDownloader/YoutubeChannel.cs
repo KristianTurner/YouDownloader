@@ -10,11 +10,17 @@ namespace YoutubeDownloader
     {
         private string _channelId;
         private static Dictionary<string, string> _videos;
+        private static List<YoutubeMovie> VideoInfo;
 
         public YoutubeChannel(string id)
         {
             _channelId = id;
             _videos = RetrieveVideoIds(_channelId);
+
+            foreach (var video in _videos)
+            {
+                VideoInfo.Add(new YoutubeMovie(video.Key));
+            }
         }
 
         private static Dictionary<string, string> RetrieveVideoIds(string userId)
@@ -37,7 +43,6 @@ namespace YoutubeDownloader
                 Console.WriteLine(exception.Message);
                 return null;
             }
-
         }
 
         public void DisplayVideoNames()
@@ -53,6 +58,5 @@ namespace YoutubeDownloader
         {
             return @"https://www.youtube.com/watch?v=" + _videos.Keys.First();
         }
-
     }
 }

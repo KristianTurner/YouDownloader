@@ -90,9 +90,8 @@
     <Compile Include="secrets.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="YoutubeAudioData.cs" />
     <Compile Include="YoutubeChannel.cs" />
-    <Compile Include="YoutubeData.cs" />
+    <Compile Include="YoutubeMovie.cs" />
     <Compile Include="YoutubeVideoData.cs" />
   </ItemGroup>
   <ItemGroup>
